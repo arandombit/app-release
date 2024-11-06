@@ -1,11 +1,5 @@
 name: release
 
-uses: actions/checkout@v4
-with:
-  repository: hydra
-  token: ${{ secrets.GITHUB_TOKEN }}
-  path: my-app
-
 jobs:
   publish-tauri:
     permissions:
@@ -26,6 +20,9 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: hydra
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: setup node
         uses: actions/setup-node@v4
