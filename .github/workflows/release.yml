@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: hydra
+          repository: arandombit/hydra
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: setup node
