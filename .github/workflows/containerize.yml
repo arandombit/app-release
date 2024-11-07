@@ -5,6 +5,8 @@ on:
 
 jobs:
   containerize-app:
+    permissions:
+      packages: write
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
