@@ -5,9 +5,9 @@ on:
 
 jobs:
   containerize-app:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
-      with:
-        repository: arandombit/hydra
-        token: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: arandombit/hydra
+          token: ${{ secrets.GITHUB_TOKEN }}
