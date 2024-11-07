@@ -58,10 +58,3 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           prerelease: false
           args: ${{ matrix.args }}
-  containerize:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          repository: arandombit/hydra
-          token: ${{ secrets.GITHUB_TOKEN }}
