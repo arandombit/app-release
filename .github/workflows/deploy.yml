@@ -11,19 +11,17 @@ jobs:
     name: Setup and Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        name: Checkout
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           repository: arandombit/hydra
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v4
-        name: Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Install dependencies
-        run: npm install --prefix .app
-      - name: Build
-        run: npm run build --prefix .app
+      - name: Build frontend assets with npm
+        run: npm install && npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
